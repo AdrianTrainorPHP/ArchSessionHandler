@@ -19,6 +19,7 @@ ArchSessionHandler::set($sessionArrayKey, $sessionArrayMessage);
 
 //set the session string variable
 ArchSessionHandler::set($sessionStringKey, $sessionStringMessage);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +42,15 @@ ArchSessionHandler::set($sessionStringKey, $sessionStringMessage);
   <p>ArchSessionHandler::get( <span class="string">'Arch.Session.Handler.Array'</span> );</p>
   <p>Output:</p>
   <pre>
-    <?php print_r(ArchSessionHandler::get($sessionArrayKey)); ?>
+
+    <?php
+    /**
+     * Get the session variable with the handle 'Arch.Session.Handler.Array'
+     * Removes the session variable
+     */
+    print_r(ArchSessionHandler::get($sessionArrayKey));
+    ?>
+
   </pre>
 
   <hr />
@@ -52,7 +61,15 @@ ArchSessionHandler::set($sessionStringKey, $sessionStringMessage);
   <p>ArchSessionHandler::get( <span class="string">'Arch.Session.Handler.String'</span>, <span class="bool">false</span>); </p>
   <p>Output:</p>
   <pre>
-    <?php echo ArchSessionHandler::get($sessionStringKey, false); ?>
+
+    <?php
+    /**
+     * Get the session variable with the handle 'Arch.Session.Handler.String'
+     * Keep the session variable in place (2nd parameter)
+     */
+    echo ArchSessionHandler::get($sessionStringKey, false);
+    ?>
+
   </pre>
 
 </body>
